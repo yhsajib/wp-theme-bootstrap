@@ -140,6 +140,7 @@ class Ysshu_Register {
 		}
 	} 
 
+	wp_enqueue_script($handle, $src, $deps, $ver, $in_footer)
 	function check_license($merlin) {
 		$yhsshu_server_info = apply_filters( 'yhsshu_server_info', ['docs_url' => '', 'support_url' => ''] ) ;
 		$purchase_code = trim( get_option( $this->theme_slug . '_purchase_code' ) ); 
