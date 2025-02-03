@@ -1,0 +1,146 @@
+$star_icon_font: "Material-Design-Iconic-Font";
+$star_icon: "\f27c";
+$star_icon_filled: "\f27d";
+$star_icon_color: #e6c9a2;
+$star_icon_filled_color: #e6c9a2;
+$star_rating_w: 95px;
+$star_rating_h: 28px;
+ 
+.yhsshu-star-rated {
+	color: $star_icon_filled_color;
+}
+.woocommerce-product-rating {
+	display: flex;
+	flex-wrap: wrap;
+	line-height: normal;
+	margin: 0;
+	align-items: center;
+}
+p.stars {
+	margin: 0;
+	> span{
+		display: block;
+	}
+}
+
+.star-rating {
+	font-family: $star_icon_font;
+	color: $star_icon_color;
+	font-size: 20px;
+	letter-spacing: 3px;
+	white-space: nowrap;
+	position: relative;
+	display: inline-block;
+	width: $star_rating_w;
+	height: $star_rating_h;
+	line-height: $star_rating_h;
+	overflow: hidden;
+	&:before{
+		content: '\f27c\f27c\f27c\f27c\f27c';
+		display: block;
+		overflow: hidden;
+	}
+	> span:before,
+	.yhsshu-star-rated:before{
+		content: '\f27d\f27d\f27d\f27d\f27d';
+		display: block;
+		overflow: hidden;
+	}
+	>span:before,
+	.yhsshu-star-rated:before,
+	&[aria-label="Rated 0 out of 5"]:before{
+		color: $star_icon_filled_color;
+	}
+	.yhsshu-star-rated,
+	> span{
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		height: $star_rating_h;
+		[dir="rtl"] &{
+			left: auto;
+			right: 0;
+		}
+	}
+	+ .woocommerce-review-link{
+		font-size: 14px;
+		color: $body_color;
+		&:hover{
+			color: $secondary_color;
+		}
+		[dir="rtl"] &{
+			margin-left: 0;
+			margin-right: 30px;
+		}
+	}
+
+}
+.comment-rating{
+	.star-rating{
+		font-size: 20px;
+		width: 95px;
+	}
+}
+.woocommerce-Reviews .comment-meta{
+	margin-bottom: -5px;
+}
+.yhsshu-rating-wrap{
+	@include d-flex();
+}
+.review-num{
+	font-size: 14px;
+	line-height: 26px;
+	letter-spacing: 0.08em;
+	color: $gray;
+	line-height: 32px;
+	padding-left: 3px;
+}
+
+p.stars {
+	line-height: 20px;
+	a {
+		position: relative;
+		height: 1em;
+		width: 1em;
+		text-indent: -999em;
+		display: inline-block;
+		text-decoration: none;
+		color: #e6c9a2;
+		&::before {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			line-height: 1;
+			font-size: 20px;
+			font-family: $star_icon_font;
+			content: $star_icon;
+			text-indent: 0;
+		}
+		&:hover ~ a::before {
+			content: $star_icon;
+			font-weight: 300;
+		}
+	}
+	&:hover a::before {
+		content: $star_icon_filled;
+		font-weight: 900;
+	}
+	&.selected {
+		a.active {
+			&::before {
+				content: $star_icon_filled;
+				font-weight: 900;
+			}
+			~ a::before {
+				content: $star_icon;
+				font-weight: 300;
+			}
+		}
+		a:not(.active)::before {
+			content: $star_icon_filled;
+			font-weight: 900;
+		}
+	}
+}

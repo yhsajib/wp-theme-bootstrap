@@ -1,0 +1,96 @@
+.woocommerce-notices-wrapper{
+	margin-bottom: 38px;
+	&:empty{
+		display: none;
+	}
+	ul{
+		list-style: none;
+	}
+}
+.woocommerce-error, 
+.woocommerce-info, 
+.woocommerce-message {
+    position: relative;
+    width: 100%;
+    border: 0;
+    color: $body_color;
+    background: #f2f2f2;
+    padding: 15px 15px 15px 45px;
+    word-wrap: break-word;
+    list-style: none;
+    @include d-flex();
+    justify-content: space-between;
+    &:before{
+    	font-family: 'Material-Design-Iconic-Font';
+    	font-size: 18px;
+	    position: absolute;
+	    top: 50%;
+	    left: 15px;
+	    @include transform(translateY(-50%));
+    }
+    a.button{
+    	float: right;
+	    padding: 0;
+	    background-color: transparent;
+	    border-color: transparent;
+	    color: $link_color; 
+	    margin: 4px 0 0 15px;
+	    position: relative;
+	    overflow: hidden;
+		&:before {
+			content: "";
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background-color: $link_color; 
+			@include transition(all 0.3s cubic-bezier(0.4, 0, 1, 1));
+		}
+		&:after {
+			content: "";
+			width: 0;
+			height: 1px;
+			position: absolute;
+			bottom: 0;
+			left: 0;	 
+			background-color: $link_color_hover;
+			@include transition(all 0.3s cubic-bezier(0.4, 0, 1, 1));
+		}
+		&:active, &:hover, &:focus {
+	        color: $link_color_hover;
+	        outline: medium none;
+	        text-decoration: none;   
+	        background-color: transparent;
+	        border-color: transparent;
+			&:before {
+		 		left: 100%;
+			}
+			&:after {
+				width: 100%;
+			}
+	    }
+    }
+}
+.woocommerce-error {
+	color: $error_color;
+	&:before{
+		color: $error_color; 
+		content: "\f1ca";
+	}
+} 
+.woocommerce-info {
+	color: $notice_color; 
+	&:before {
+		color: $notice_color; 
+		content: "\f1f7";
+	}
+}
+.woocommerce-message {
+	color: $success_color; 
+	&:before {
+		color: $success_color; 
+		content: "\f1ca";
+	}
+}
+

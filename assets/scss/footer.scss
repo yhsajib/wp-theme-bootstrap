@@ -1,0 +1,225 @@
+.yhsshu-scroll-top {
+	position: fixed;
+	z-index: 99;
+	bottom: 24px;
+	right: 30px;
+	height: 50px;
+	width: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background-color: $primary_color;
+	opacity: 0;
+	visibility: hidden;
+	i{
+		font-size: 20px;
+		color: #fff;
+	}
+	&:hover, &:focus, &:active {
+		i {
+			@include animation(toTopFromBottom .3s forwards);
+		}
+	}
+	&.sushi {
+		background-color: #d74d29;
+		border-radius: 10px;
+		.yhsshu-scroll-progress-circle {
+			position: absolute;
+			top: 50%;
+			left: auto;
+			right: auto;
+			z-index: -1;
+			width: 30px;
+			height: 30px;
+			transform: translateY(-50%);
+			path {
+				fill: none;
+				stroke: #fff;
+				stroke-width: 4;
+				box-sizing: border-box;
+				-webkit-transition: all 200ms linear;
+				transition: all 200ms linear;
+			}
+		}
+		i{
+			font-size: 15px;
+			color: #fff;
+		}
+	}
+	&.on {
+		bottom: 44px;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.yhsshu-scroll-top.custom-style-1{
+	width: 40px;
+    height: 40px;
+	background-color: #fff;
+	border: 1.2px solid rgba(134, 134, 134, 0.12);
+	.yhsshu-scroll-progress-circle {
+		position: absolute;
+		top: 50%;
+		left: auto;
+		right: auto;
+		z-index: -1;
+		transform: translateY(-50%);
+		path {
+			fill: none;
+			stroke: $heading_color;
+			stroke-width: 2;
+			box-sizing: border-box;
+			-webkit-transition: all 200ms linear;
+			transition: all 200ms linear;
+		}
+	}
+	i{
+		font-size: 15px;
+		color: $heading_color;
+		position: relative;
+		top: -1px;	
+	}
+}
+
+.yhsshu-scroll-top.custom-style-2{
+	width: 50px;
+    height: 50px;
+	background-color: $additional01_color;
+	border: 1.2px solid rgba(134, 134, 134, 0.12);
+	.yhsshu-scroll-progress-circle {
+		position: absolute;
+		top: 50%;
+		left: auto;
+		right: auto;
+		z-index: -1;
+		transform: translateY(-50%);
+		path {
+			fill: none;
+			stroke: $primary_color;
+			stroke-width: 4;
+			box-sizing: border-box;
+			-webkit-transition: all 200ms linear;
+			transition: all 200ms linear;
+		}
+	}
+	i{
+		font-size: 15px;
+		color: #fff;
+		position: relative;
+		top: -1px;	
+	}
+}
+
+.yhsshu-footer.scroll-off:after{display: none;}
+ 
+.yhsshu-footer{
+    .yhsshu-heading-wrap{
+        // .heading-title{
+        //     color: $white;
+        // }
+        h4{
+            font-size: 24px;
+        }
+    }
+	.yhsshu-nav-menu{
+		ul > li{
+			a{
+				position: relative;
+				transition: all 200ms ease 0s;
+				&:before{
+					content: "";
+					display: inline-block;
+					width: 4px;
+					height: 4px;
+					border-radius: 50%;
+					background-color: #fff;
+					vertical-align: middle;
+					margin-right: 5px;
+					transform: scale(0);
+				}
+				> span{
+					transition: all 0.3s cubic-bezier(0.39, 0.58, 0.57, 1) !important;
+					display: inline-block;
+					transform: translateX(-23px);
+					&:before{
+						content: "";
+						display: inline-block;
+						width: 4px;
+						height: 4px;
+						border-radius: 50%;
+						background-color: #fff;
+						vertical-align: middle;
+						margin-right: 10px;
+						transform: scale(0);
+					}
+				}
+				&:hover{
+					> span{
+						transform: translateX(0);
+					}
+					margin-left: 0;
+					&:before{
+						transition: all 200ms linear 200ms;
+					}
+					> span:before{
+						transition: all 200ms linear 300ms;
+					}
+					&:before, > span:before{
+						transform: scale(1);
+					}
+				}
+			}
+			& + li{
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+.yhsshu-footer-fixed {
+	#yhsshu-footer.footer-type-el {
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		@media (max-width: $lg_max){
+			position: static;
+		}
+	}
+	#header-type-el {
+		background-color: #fff;
+	}
+	#yhsshu-main {
+		background-color: #fff;
+		@media (max-width: $lg_max){
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+/* Default Footer */
+.yhsshu-footer-bottom{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: $secondary_color;
+	color: #fff;
+	font-size: 16px;
+}
+ 
+.yhsshu-copyright-text{
+	a{
+		color: #fff;
+		&:hover {
+			color: $primary_color;
+		}
+	}
+}
+
+@media (max-width: 575px){
+	.elementor-widget-icon-list .elementor-icon-list-item .elementor-icon-list-icon .fa-square-full {
+		margin-top: 5px;
+	}
+}

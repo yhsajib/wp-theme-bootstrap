@@ -1,0 +1,1 @@
+<div class="yhsshu-shape <?php echo esc_attr($settings['style']);?>"></div>

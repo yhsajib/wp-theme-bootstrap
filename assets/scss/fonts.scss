@@ -1,0 +1,150 @@
+//* Add Font Face
+//---------------------------- Heading Font ---------------------------
+@font-face {
+    font-family: "Audrey";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/font-face/Audrey-Normal.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Audrey";
+    font-style: oblique;
+    font-weight: 400;
+    src: url("../fonts/font-face/Audrey-NormalOblique.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Audrey";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/font-face/Audrey-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Audrey";
+    font-style: oblique;
+    font-weight: 500;
+    src: url("../fonts/font-face/Audrey-MediumOblique.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Audrey";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/font-face/Audrey-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Audrey";
+    font-style: oblique;
+    font-weight: 700;
+    src: url("../fonts/font-face/Audrey-BoldOblique.woff") format("woff");
+}
+
+//---------------------------- Heading Font Souvenir ---------------------------
+@font-face {
+    font-family: "Souvenir";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/font-face/Souvenir.woff") format("woff");
+}
+@font-face {
+    font-family: "Souvenir";
+    font-style: italic;
+    font-weight: 400;
+    src: url("../fonts/font-face/SouvenirI.woff") format("woff");
+}
+@font-face {
+    font-family: "Souvenir";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../fonts/font-face/souvenir-demi.woff") format("woff");
+}
+@font-face {
+    font-family: "Souvenir";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/font-face/SouvenirB.woff") format("woff");
+}
+@font-face {
+    font-family: "Souvenir";
+    font-style: italic;
+    font-weight: 700;
+    src: url("../fonts/font-face/SouvenirBI.woff") format("woff");
+}
+
+// Font family custom class
+.heading-default-font {
+    font-family: $heading_font_family !important;
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: $heading_font_family !important;
+    }
+}
+
+// Font family custom class
+.body-default-font{
+    font-family: $body_font_family !important;
+}
+
+//--------------------------Additional Fonts-------------------------
+@font-face {
+    font-family: 'PS Demo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/font-face/PS-Demo.woff') format('woff')
+}
+
+@font-face {
+    font-family: "IPAMincho";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/font-face/IPAMincho-Regular.woff") format("woff");
+}
+
+// Font family custom class
+.additional-font-1 {
+    font-family: 'PS Demo' !important;
+}
+
+@font-face {
+    font-family: 'Cirka';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/font-face/Cirka.woff') format('woff')
+}
+
+.additional-font-2 {
+    font-family: 'Cirka' !important;
+}
+
+.font-ipamincho {
+    font-family: "IPAMincho" !important;
+}
+
+.heading-souvenir {
+	font-family: "Souvenir" !important;
+}
+
+@font-face {
+    font-family: "Hertine";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/font-face/Hertine.woff") format("woff");
+}
+
+.font-hertine {
+    font-family: "Hertine" !important;
+}
+
+@font-face {
+    font-family: "MaShanZheng";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/font-face/MaShanZheng-Regular.woff") format("woff");
+}
+
+.font-mashanzheng {
+    font-family: "MaShanZheng" !important;
+}

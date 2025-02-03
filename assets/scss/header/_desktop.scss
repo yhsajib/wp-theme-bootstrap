@@ -1,0 +1,263 @@
+@media (min-width: $xl_min){
+    .header-height{
+        height: $header-height;
+    }
+    .yhsshu-header-transparent{
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
+    }
+}
+
+#yhsshu-header{
+    position: relative;
+    z-index: 9;
+    @include transition(all 0.3s cubic-bezier(.3,.4,.5, 1) 0s);
+    .header-container {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 15px;
+    }
+}
+
+ /* Header Logo */
+ .yhsshu-header-logo{
+     img{
+         max-height: 49px;
+         width: auto;
+     }
+     a{
+         display: block;
+         @media (max-width: $lg_max){
+             padding-top: 10px;
+             padding-bottom: 10px;
+         }
+     }
+ }
+
+.header-type-df{
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    &.h-fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 999;
+        @include transition(.6s cubic-bezier(.3,.4,.5,1));
+        @include animation(0.95s ease 0s normal forwards 1 running headerSlideDown);
+        @include box-shadow(0 3px 18px rgba(#02154e, 0.09));
+    } 
+}
+
+.yhsshu-header-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 99;
+    opacity: 0;
+    @include transform(translateY(-100%));
+    @include transition(.6s cubic-bezier(0.43, 0.46, 0.64, 0.66) !important);
+    &.h-fixed {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        @include transform(translateY(0%));
+        opacity: 1;
+        @include box-shadow(0 3px 18px rgba(#02154e, 0.09));
+    }
+    &.yhsshu-header-rotate-x{
+        @include transition(all .3s ease-out !important);
+        -webkit-transform: perspective(300px) rotateX(-90deg);
+        transform: perspective(300px) rotateX(-90deg);
+        -webkit-transform-origin: top;
+        -khtml-transform-origin: top;
+        -moz-transform-origin: top;
+        -ms-transform-origin: top;
+        -o-transform-origin: top;
+        transform-origin: top;
+        &.h-fixed {
+            -webkit-transform: perspective(300px) rotateX(0deg);
+            transform: perspective(300px) rotateX(0deg);
+        }
+    }
+     
+}
+
+.yhsshu-header-main-sticky{ 
+    z-index: 1;
+    @include transition( all .3s ease-out !important);
+    &.h-fixed{
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        background-color: #fff;
+        @include box-shadow(0 3px 18px rgba(#02154e, 0.09));
+    }
+}
+
+.sticky-direction-scroll-down{
+    .yhsshu-header-main-sticky{ 
+        &.h-fixed{
+            @include animation(0.95s linear 0s normal forwards 1 running headerSlideDown); 
+        }
+    }
+}
+
+.yhsshu-header-fixed-top{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+    z-index: 1000;
+    -webkit-transition: background 0.4s ease-in-out 0.3s;
+    transition: background 0s ease-in-out 0s;
+}
+
+.admin-bar{
+    .yhsshu-header-sticky {
+        top: 32px;
+        @media screen and (max-width: 782px) {
+            top: 46px;
+        }
+        @media screen and (max-width: 600px) {
+            top: 0;
+        }
+    }
+    .h-fixed{
+        top: 32px;
+        @media screen and (max-width: 782px) {
+            top: 46px;
+        }
+        @media screen and (max-width: 600px) {
+            top: 0;
+        }
+    }
+    .yhsshu-header-fixed-top{
+        top: 32px;
+        @media screen and (max-width: 782px) {
+            top: 46px;
+        }
+        @media screen and (max-width: 600px) {
+            top: 0;
+        }
+    }
+}
+
+@media (min-width: $xl_min){
+    .yhsshu-page.header-pos-fixed-left,
+    .yhsshu-page.header-pos-fixed-right{
+        .yhsshu-header{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 25%;
+            overflow-y: overlay;
+            z-index: 1;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar{
+                height: 0;
+                width: 7px;
+                background-color: transparent;
+            }
+
+            &::-webkit-scrollbar-track{
+                border-radius: 0;
+            }
+             
+            &::-webkit-scrollbar-thumb{
+                border-radius: 0;
+                background-color: transparent;
+            }
+
+            &:hover::-webkit-scrollbar {
+                width: 7px;
+
+                background-color: rgba(255,255,255,0.1);
+                border-radius: 0
+            }
+            &:hover::-webkit-scrollbar-thumb{
+                background-color: rgba(204, 204, 204, 0.3);
+            }
+        }
+        .elementor-section.elementor-section-boxed > .elementor-container{
+            max-width: 1170px;
+        }
+ 
+    }
+    .admin-bar{
+        .yhsshu-page.header-pos-fixed-left,
+        .yhsshu-page.header-pos-fixed-right{
+            .yhsshu-header{
+                top: 32px;
+            }
+        }
+    }
+    .yhsshu-page.header-pos-fixed-left{
+        padding-left: 25%;
+        .yhsshu-header{
+            left: 0;
+        }
+    }
+    .yhsshu-page.header-pos-fixed-right{
+        padding-right: 25%;
+        .yhsshu-header{
+            right: 0;
+        }
+        .style-vr .yhsshu-primary-menu{
+            > li > .sub-menu{
+                left: auto;
+                right: 100%;
+            }
+            .sub-menu{
+                @include transform(translate(-20px, 0));
+            }
+            li:hover > .sub-menu{
+                @include transform(translate(0, 0));
+            }
+            > li{
+                flex-direction: row-reverse;
+            }
+            > li > .main-menu-toggle{
+                right: auto;
+                left: 30px;
+                @include transform(rotate(180deg));
+            }
+        } 
+    }
+} 
+ 
+@media (min-width: $xxxl_min){
+    .yhsshu-page.header-pos-fixed-left{
+        .yhsshu-main .elementor-section .elementor-container{
+            margin-left: 65px;
+        }
+        .yhsshu-footer .elementor-section .elementor-container{
+            margin-left: 65px;
+        }
+    }
+    .yhsshu-page.header-pos-fixed-right{
+        .yhsshu-main .elementor-section .elementor-container{
+            margin-right: 65px;
+        }
+        .yhsshu-footer .elementor-section .elementor-container{
+            margin-right: 65px;
+        }
+    } 
+
+}

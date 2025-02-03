@@ -1,0 +1,737 @@
+#yhsshu-main form.cart:has(#yith-wapo-container .yith-wapo-block),
+&:is(.woocommerce div.product .elementor-widget-woocommerce-product-add-to-cart) form.cart.variations_form .woocommerce-variation-add-to-cart {
+	display: flex !important;
+}
+.yith-wapo-container:has(div) {
+	margin-bottom: 20px;
+	flex-grow: 1;
+}
+#yhsshu-main .yith-wapo-block .yith-wapo-addon:not(:first-child):not(.empty-title):not(.toggle-open) {
+	margin-top: 30px;
+}
+.yith-wapo-block .yith-wapo-addon {
+	.wapo-addon-title {
+		font-size: 20px;
+		font-weight: 400;
+		letter-spacing: 0.03em;
+	}
+	&.yith-wapo-addon-type-checkbox,
+	&.yith-wapo-addon-type-radio {
+		.options {
+			grid-template-columns: repeat( 2, minmax(0, 100%) ) !important;
+			gap: 20px !important;
+			@media (max-width: $md_max) {
+				grid-template-columns: repeat( 1, minmax(0, 100%) ) !important;
+			}
+		}
+	}
+	.yith-wapo-option {
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			small {
+				margin-left: 5px;
+				font-size: 100%;
+			}
+		}
+		.checkbox-button-container {
+			.yith-wapo-label,
+			.yith-wapo-addon-label {
+				&:after {
+					content: '';
+					position: absolute;
+					top: 4px;
+					left: 8px;
+					display: inline-block;
+					width: 7px;
+					height: 13px;
+					border-right: 2px solid;
+					border-bottom: 2px solid;
+					border-color: #fff;
+					@include transform(rotate(45deg));
+					opacity: 0;
+				}
+			}
+		}
+		.radio-button-container {
+			.yith-wapo-label,
+			.yith-wapo-addon-label {
+				&:after {
+					content: '';
+					position: absolute;
+					top: 6px;
+					left: 6px;
+					display: inline-block;
+					width: 12px;
+					height: 12px;
+					background-color: $primary_color;
+					@include border-radius(50%);
+					opacity: 0;
+				}
+			}
+		}
+		.checkbox-button-container,
+		.radio-button-container {
+			.yith-wapo-addon-label,
+			.yith-wapo-label {
+				padding-left: 40px;
+				line-height: 24px;
+				&:before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 24px;
+					height: 24px;
+					display: inline-block;
+					border: 1px solid $divider_color;
+					background-color: #fff;
+					@include border-radius(50%);
+				}
+			}
+			.checkboxbutton,
+			.radiobutton {
+				input {
+					display: none;
+				}
+				&:has(input:checked) {
+					& ~ .yith-wapo-addon-label,
+					& ~ .yith-wapo-label {
+						&:after {
+							opacity: 1;
+						}
+					}
+				}
+			}
+			.checkboxbutton:has(input:checked) {
+				& ~ .yith-wapo-addon-label,
+				& ~ .yith-wapo-label {
+					&:before {
+						background-color: $primary_color;
+					}
+				}
+			}
+		}
+	}
+}
+
+.yhsshu-shop-layout-3 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.yhsshu-shop-layout-42 {
+	.yith-wapo-block .yith-wapo-addon{
+		.yith-wapo-option {
+			.yith-wapo-addon-label, .yith-wapo-label {
+				position: relative;
+				font-size: 17px;
+				line-height: 24px;
+				font-weight: 500;
+				letter-spacing: 0;
+			}
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 4px;
+						left: 8px;
+						width: 7px;
+						height: 13px;
+						border-right: 2px solid;
+						border-bottom: 2px solid;
+						border-color: #fff;
+						@include transform(rotate(45deg));
+						opacity: 0;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 6px;
+						left: 6px;
+						display: inline-block;
+						width: 12px;
+						height: 12px;
+						background-color: $primary_color;
+						@include border-radius(50%);
+						opacity: 0;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					padding-left: 40px;
+					line-height: 24px;
+					&:before {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 24px;
+						height: 24px;
+						display: inline-block;
+						border: 1px solid $divider_color;
+						background-color: #fff;
+						@include border-radius(50%);
+					}
+				}
+			}
+		}
+	}
+}
+
+.yhsshu-shop-layout-6 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.yhsshu-shop-layout-7 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.yhsshu-shop-layout-8 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.yhsshu-shop-layout-9 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.yhsshu-shop-layout-10 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.yhsshu-shop-layout-11 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.yhsshu-shop-layout-12 {
+	.yith-wapo-container {
+		margin-bottom: 0;
+	}
+	.yith-wapo-block .yith-wapo-addon{
+		.wapo-addon-title {
+			font-size: 25px;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+		}
+		.yith-wapo-addon-label, .yith-wapo-label {
+			position: relative;
+			font-size: 15px;
+			font-weight: 400;
+			letter-spacing: 0;
+		}
+		.yith-wapo-option {
+			.checkbox-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 8px;
+						width: 6px;
+						height: 10px;
+					}
+				}
+			}
+			.radio-button-container {
+				.yith-wapo-label,
+				.yith-wapo-addon-label {
+					&:after {
+						top: 5px;
+						left: 5px;
+						width: 12px;
+						height: 12px;
+					}
+				}
+			}
+			.checkbox-button-container,
+			.radio-button-container {
+				.yith-wapo-addon-label,
+				.yith-wapo-label {
+					line-height: 22px;
+					&:before {
+						left: 0;
+						top: 0;
+						width: 22px;
+						height: 22px;
+					}
+				}
+				.checkboxbutton,
+				.radiobutton {
+					&:has(input:checked) {
+						& ~ .yith-wapo-addon-label,
+						& ~ .yith-wapo-label {
+							&:after {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+div#wapo-total-price-table {
+	background-color: transparent;
+	margin-top: 20px;
+	table {
+		border: none;
+		th, td {
+			padding: 0;
+			color: $heading_color;
+			font-size: 17px;
+			font-weight: 30px;
+			font-weight: 500;
+			border: none;
+		}
+		th {
+			padding-right: 25px;
+			font-weight: 500;
+		}
+		#wapo-total-order-price .amount {
+			color: $primary_color;
+		}
+	}
+}

@@ -1,0 +1,155 @@
+//* Screen max-width breakpoints
+$screen_breakpoints: (
+	laptop: 1499px,
+	tablet_extra: 1199px,
+	tablet: 991px,
+	mobile_extra: 767px,
+  	mobile: 575px
+) !default;
+
+.yhsshu-swiper-arrows-false{
+	.yhsshu-slider-arrow-wrap{
+		display: none;
+	}
+}
+@each $breakpoint, $max_width in $screen_breakpoints {
+	@media (max-width: $max_width){
+		.yhsshu-swiper-arrows-#{$breakpoint}-false{
+			.yhsshu-slider-arrow-wrap{
+				display: none;
+			}
+		}
+		.yhsshu-swiper-arrows-#{$breakpoint}-true{
+			.yhsshu-slider-arrow-wrap{
+				display: flex;
+			}
+		} 
+	}
+}
+
+.yhsshu-swiper-dots-false{
+	.yhsshu-slider-dots{
+		display: none;
+	}
+}
+@each $breakpoint, $max_width in $screen_breakpoints {
+	@media (max-width: $max_width){
+		.yhsshu-swiper-dots-#{$breakpoint}-false{
+			.yhsshu-slider-dots{
+				display: none;
+			}
+		}
+		.yhsshu-swiper-dots-#{$breakpoint}-true{
+			.yhsshu-slider-dots{
+				display: flex;
+			}
+		} 
+	}
+}
+
+$grid-breakpoints: (
+		xs: 0,
+		sm: 576px,
+		md: 768px,
+		lg: 992px,
+		xl: 1200px,
+		xxl: 1400px
+) !default;
+
+$spacers: (
+		0: 0,
+		5: 5px,
+		10: 10px,
+		12: 12px,
+		15: 15px,
+		16: 16px,
+		20 : 20px,
+		25 : 25px,
+		30 : 30px,
+		40 : 40px,
+		50 : 50px,
+		60 : 60px,
+		70 : 70px,
+		80 : 80px,
+		90 : 90px,
+		100 : 100px
+) !default;
+
+@each $breakpoint, $min_width in $grid-breakpoints {
+	@each $key, $val in $spacers {
+		.d-flex.gx-#{$key}{
+			margin-left: #{$key/-2}px;
+			margin-right: #{$key/-2}px;
+			>*{
+				padding-left: #{$key/2}px;
+				padding-right: #{$key/2}px;
+			}
+		}
+	}
+	@media (min-width: $min_width){
+		@each $key, $val in $spacers {
+			.d-flex.gx-#{$breakpoint}-#{$key}{
+				margin-left: #{$key/-2}px;
+				margin-right: #{$key/-2}px;
+				>*{
+					padding-left: #{$key/2}px;
+					padding-right: #{$key/2}px;
+				}
+			}
+		}
+	}
+}
+
+.yhsshu-border-anm.bw-no{
+    border-width: 0;
+}
+.yhsshu-border-anm.bw-yes{
+    border-width: var(--bd-width);
+}
+
+@each $breakpoint, $max_width in $screen_breakpoints {
+    @media (max-width: $max_width){
+        .yhsshu-border-anm.bw-#{$breakpoint}-no{
+            border-width: 0;
+        }
+        .yhsshu-border-anm.bw-#{$breakpoint}-yes{
+            border-width: var(--bd-width);
+        }
+    }
+}
+
+.yhsshu-swiper-dots-false{
+    .yhsshu-slider-dots{
+        display: none;
+    }
+    .yhsshu-swiper-dots{
+        display: none;
+    }
+}
+
+@each $breakpoint, $max_width in $screen_breakpoints {
+    @media (max-width: $max_width){
+        .yhsshu-swiper-dots-#{$breakpoint}-false{
+            .yhsshu-slider-dots{
+                display: none;
+            }
+            .yhsshu-swiper-dots{
+                display: none;
+            }
+        }
+        .yhsshu-swiper-dots-#{$breakpoint}-true{
+            .yhsshu-slider-dots{
+                display: flex;
+            }
+            .yhsshu-swiper-dots{
+                display: flex;
+            }
+        }
+    }
+}
+
+.yhsshu-column-fullwidth-yes {
+	@media (min-width: $xxl_min) {
+		width: 100% !important;
+	}
+}

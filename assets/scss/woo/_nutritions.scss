@@ -1,0 +1,116 @@
+.yhsshu-nutritions-wrapper {
+	padding-top: 25px;
+	margin-top: 23px;
+	border-top: 1px solid $divider_color;
+	width: 100%;
+	.yhsshu-nutrition-list {
+		@include d-flex();
+		.yhsshu-nutrition {
+			flex-basis: 50%;
+			color: $heading_color;
+			font-weight: 500;
+			line-height: 35px;
+			letter-spacing: 0.02em;
+			.yhsshu-nutrition-value {
+				color: $primary_color;
+			}
+		}
+	}
+}
+
+.yhsshu-shop-layout-3 .yhsshu-nutritions-wrapper {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+	}
+}
+
+.yhsshu-shop-layout-42 .yhsshu-nutritions-wrapper {
+	border-color: $divider_color;
+	h3 {
+		font-size: 20px;
+		font-weight: 400;
+		letter-spacing: 0.03em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+		font-weight: 600;
+		line-height: 35px;
+		letter-spacing: 0.02em;
+	}
+}
+.yhsshu-shop-layout-6 .yhsshu-nutritions-wrapper {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+	}
+}
+
+.yhsshu-shop-layout-7 .yhsshu-nutritions-wrapper {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+	}
+}
+.yhsshu-shop-layout-8 .yhsshu-nutritions-wrapper {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+	}
+}
+.yhsshu-shop-layout-9 .yhsshu-nutritions-wrapper {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+	}
+}
+.yhsshu-shop-layout-10 .yhsshu-nutritions-wrapper {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+	}
+}
+.yhsshu-shop-layout-11 .yhsshu-nutritions-wrapper {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+	}
+}
+.yhsshu-shop-layout-12 .yhsshu-nutritions-wrapper {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.yhsshu-nutrition {
+		text-transform: uppercase;
+	}
+}

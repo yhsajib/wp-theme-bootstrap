@@ -1,0 +1,55 @@
+@import 'desktop';
+@import 'mobile';
+
+#yhsshu-header{
+	@include transition(all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s);
+	.yhsshu-header-main{
+		position: relative;
+		z-index: 999;
+	}
+}
+
+.header-layout-404{
+	.yhsshu-header-attrs{
+		a{
+			color: $heading_color;
+			&:hover{
+				color: $link_color_hover;
+			}
+		}
+	}
+	.yhsshu-search{
+		@media (min-width: $sm_min){
+			width: 55px;
+			height: 55px;
+		}
+	}
+	.side-panel{
+		@media (min-width: $sm_min){
+			background-color: $secondary_color;
+			width: 55px;
+			height: 55px;
+		}
+		.yhsshu-bars{
+	        span{
+	            width: 30px;
+	            height: 3px;
+	            background-color: #fff;
+	            display: block;
+	            @include transition();
+	            &:nth-child(2){
+	                margin: 7px 0;
+	            }
+	            @media (max-width: $xs_max){
+					background-color: $primary_color;
+				}
+	        }
+		}
+		&:hover{
+        	background-color: $primary_color;
+        }
+	}
+	
+}
+
+

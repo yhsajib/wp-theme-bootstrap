@@ -1,0 +1,29 @@
+<?php
+/**
+ * @package yhsshu
+ */
+?>
+<?php
+    $id = get_the_ID();
+    if(class_exists('\Elementor\Plugin') && \Elementor\Plugin::$instance->documents->get( $id )->is_built_with_elementor()){
+        $post_content_classes = 'single-elementor-content';
+    } else {
+        $post_content_classes = '';
+    }
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('yhsshu-single-post-type yhsshu-portfolio'); ?>>
+    <div class="yhsshu-entry-content clearfix">
+            <div class="content-inner clearfix <?php echo esc_attr($post_content_classes);?>"><?php
+                the_content();
+            ?></div>
+            <?php
+                wp_link_pages( array(
+                    'before'      => '<div class="page-links">',
+                    'after'       => '</div>',
+                    'link_before' => '<span>',
+                    'link_after'  => '</span>',
+                ) );
+            ?>
+    </div>
+    <?php yhsshu()->blog->get_post_nav(); ?>
+</article> 

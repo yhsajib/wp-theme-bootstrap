@@ -1,0 +1,866 @@
+.button, button, input[type="button"], input[type="reset"], input[type="submit"] {
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    vertical-align: bottom;
+
+    &:hover, &:active, &:focus {
+        cursor: pointer;
+    }
+
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: none;
+        outline-offset: 0;
+    }
+
+}
+
+.btn, button, .button, input[type="submit"], input[type="button"], .added_to_cart, .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $button_font_family;
+    font-size: $button_font_size;
+    font-weight: $button_font_weight;
+    letter-spacing: $button_letter_spacing;
+    padding: $button_padding;
+    line-height: $button_line_height;
+    @include border-radius($button_radius);
+    background-color: $secondary_color;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    outline: none;
+    cursor: pointer;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    @include box-shadow(none);
+    @include transition(all 250ms linear 0s);
+    @media (max-width: $md_max){
+        font-size: 12px;
+    }
+    &:before {
+        z-index: 1;
+    }
+    .yhsshu-button-icon {
+        color: $primary_color;
+        top: -1px;
+        @include transition(all 250ms linear 0s);
+    }
+    span, i {
+        position: relative;
+        z-index: 2;
+    }
+    span + i, i + span {
+        margin-left: 13px;
+    }
+    &.btn-default {
+        border: 1px solid $secondary_color;
+        &:before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            bottom: -1px;
+            right: -1px;
+            height: 0;
+            background-color: #fff;
+            @include transition(all 250ms linear 0s);
+        }
+        &:hover {
+            color: $heading_color;
+            i, .yhsshu-button-icon {
+                color: $heading_color;
+            }
+            &:before {
+                height: calc(100% + 2px);
+            }
+        }
+    }
+    &.btn-fullwidth {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    &.btn-outline {
+        border: 1px solid $primary_color;
+        background-color: transparent;
+        color: $secondary_color;
+        overflow: visible;
+        transition: all 0.3s ease;
+        margin-bottom: 8px;
+        @media (max-width: $md_max){
+            padding: 8px 25px 8px 25px;
+            font-size: 12px;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            height: 0;
+            background-color: $primary_color;
+            transition: all 0.3s ease;
+            transition-delay: 0ms;
+            z-index: 1;
+        }
+        .yhsshu-button-icon {
+            color: $secondary_color;
+        }
+        &.hover-bg-secondary {
+            &:before {
+                background-color: $secondary_color; 
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            bottom: -9px;
+            height: 1px;
+            background-color: $primary_color;
+            opacity: 1;
+            @include transition(all 0.3s ease);
+            transition-delay: 0.15s;
+        }
+        &:hover {
+            transition-delay: 0.25s;
+            color: $heading_color;
+            &:before {
+                height: calc(100% + 2px);
+                transition-delay: 0.15s;
+            }
+            &:after {
+                content: "";
+                bottom: 0px;
+                opacity: 0;
+                transition-delay: 0ms;
+            }
+        }
+    }
+    &.btn-outline-secondary {
+        background-color: transparent;
+        border: 1px solid $secondary_color;
+        color: $secondary_color;
+        position: relative;
+        overflow: visible;
+        transition: all 0.3s ease;
+        margin-bottom: 8px;
+        height: $input_height;
+        @media (max-width: $md_max){
+            padding: 8px 25px 8px 25px;
+            font-size: 12px;
+        }
+        .yhsshu-button-icon {
+            color: $secondary_color;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            height: 0;
+            background-color: $secondary_color;
+            transition: all 0.3s ease;
+            transition-delay: 0ms;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            bottom: -9px;
+            height: 1px;
+            background-color: $secondary_color;
+            opacity: 1;
+            @include transition(all 0.3s ease);
+            transition-delay: 0.15s;
+        }
+        &:hover {
+            color: #fff;
+            transition-delay: 0.25s;
+            &:before {
+                height: calc(100% + 2px);
+                transition-delay: 0.15s;
+            }
+            &:after {
+                content: "";
+                bottom: 0px;
+                opacity: 0;
+                transition-delay: 0ms;
+            }
+        }
+        &.ct-form-btn {
+            background-color: $secondary_color;
+            color: $primary_color;
+            &:hover {
+                color: $secondary_color !important;
+                &:before {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    &.btn-outline-secondary-2 {
+        font-family: $heading_font_family;
+        padding: 12px 32px;
+        background-color: transparent;
+        border: 1px solid $primary_color;
+        color: $primary_color;
+        position: relative;
+        overflow: visible;
+        transition: all 0.3s ease;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.15em;
+        z-index: 1;
+        .yhsshu-button-icon {
+            color: $primary_color;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            height: 0;
+            background-color: $primary_color;
+            transition: all 0.3s ease;
+            transition-delay: 0ms;
+            z-index: -1;
+        }
+        &:hover {
+            color: #fff;
+            transition-delay: 0.25s;
+            &:before {
+                height: calc(100% + 2px);
+                transition-delay: 0.15s;
+            }
+        }
+    }
+    &.btn-white {
+        border: 1px solid #fff;
+        background-color: #fff;
+        color: $heading_color;
+        position: relative;
+        overflow: visible;
+        transition: all 0.3s ease;
+        margin-bottom: 8px;
+        .yhsshu-button-icon {
+            color: $heading_color;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            background-color: $primary_color;
+            top: auto;
+            left: -1px;
+            bottom: -1px;
+            right: -1px;
+            height: 0;
+            transition: all 0.3s ease;
+            transition-delay: 0ms;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            bottom: -9px;
+            height: 1px;
+            background-color: #fff;
+            opacity: 1;
+            @include transition(all 0.3s ease);
+            transition-delay: 0.15s;
+        }
+        &:hover {
+            border: 1px solid $primary_color;
+            transition-delay: 0.25s;
+            &:before {
+                height: 101%;
+                transition-delay: 0.15s;
+            }
+            &:after {
+                content: "";
+                bottom: 0px;
+                opacity: 0;
+                transition-delay: 0ms;
+            }
+        }
+    }
+    &.btn-additional-1 {
+        background-color: $primary_color;
+        border-color: $primary_color;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            background-color: #fff;
+            transform-origin: bottom right;
+            @include transform(scale(0));
+            @include transition(all 250ms linear 0s);
+        }
+        &:hover {
+            color: $secondary_color;
+            transition-delay: 0.15s;
+            &:before {
+                @include transform(scale(1));
+            }
+        }
+    }
+    &.btn-additional-2 {
+        background-color: transparent;
+        border-color: #fff;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            background-color: #fff;
+            transform-origin: bottom right;
+            @include transition(all 250ms linear 0s);
+            @include transform(scale(0));
+        }
+        &:hover {
+            color: $secondary_color;
+            transition-delay: 0.15s;
+            &:before {
+                @include transform(scale(1));
+            }
+        }
+    }
+    &.btn-additional-3 {
+        color: $heading_color;
+        border: 1px solid $primary_color;
+        background-color: transparent;
+        overflow: visible;
+        margin-bottom: 9px;
+        padding: 12px 35px;
+        .yhsshu-button-icon {
+            color: $heading_color;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            @include transform(scale(0));
+            @include transition(all 250ms linear 0s);
+            background-color: $primary_color;
+            transform-origin: bottom right;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: auto;
+            right: -10px;
+            bottom: -10px;
+            top: 8px;
+            border-right: 1px solid $primary_color;
+            border-bottom: 1px solid $primary_color;
+            background-color: transparent;
+            width: 100%;
+            height: auto;
+            @include transition(all 0.3s ease);
+        }
+        &:hover {
+            transition-delay: 0.25s;
+            &:before {
+                transition-delay: 0.15s;
+                @include transform(scale(1));
+            }
+            &:after {
+                top: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+    }
+    &.btn-additional-4 {
+        color: $heading_color;
+        border: 1px solid $secondary_color;
+        background-color: transparent;
+        overflow: visible;
+        margin-bottom: 9px;
+        .yhsshu-button-icon {
+            color: $heading_color;
+        }
+        &:before {
+            content: '';
+            @include transform(scale(0));
+            height: 100%;
+            background-color: $secondary_color;
+            transform-origin: bottom right;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: auto;
+            right: -10px;
+            bottom: -10px;
+            top: 8px;
+            border-right: 1px solid $secondary_color;
+            border-bottom: 1px solid $secondary_color;
+            background-color: transparent;
+            width: 100%;
+            height: auto;
+            @include transition(all 0.3s ease);
+        }
+        &:hover {
+            transition-delay: 0.25s;
+            color: #fff;
+            &:before {
+                transition-delay: 0.15s;
+                @include transform(scale(1));
+            }
+            &:after {
+                top: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+    }
+    &.btn-additional-5 {
+        background-color: $primary_color;
+        @include border-radius(25px);
+        color: #fff;
+        font-family: $heading_font_family;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.065em;
+        border: none;
+        height: $input_height;
+        .yhsshu-button-icon {
+            position: relative;
+            color: #fff;
+            margin-bottom: -2px;
+        }
+        i:not(.yhsshu-button-icon) {
+            position: relative;
+            margin-left: 7px;
+            color: #fff;
+        }
+        &:hover {
+            background-color: $heading_color;
+            i {
+                color: #fff;
+            }
+        }
+    }
+    &.btn-additional-6 {
+        background-color: $secondary_color;
+        @include border-radius(25px);
+        color: #fff;
+        font-family: $heading_font_family;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.065em;
+        border: none;
+        height: $input_height;
+        .yhsshu-button-icon {
+            color: #fff;
+            margin-bottom: -2px;
+        }
+        i:not(.yhsshu-button-icon) {
+            margin-left: 7px;
+            color: #fff;
+            &:hover {
+                color: #fff;
+            }
+        }
+        &:hover {
+            background-color: $heading_color;
+            i {
+                color: #fff;
+            }
+        }
+    }
+    &.btn-additional-7 {
+        font-family: $body_font_family;
+        color: #fff;
+        border: 1px solid;
+        border-color: $divider_color;
+        background-color: $primary_color;
+        line-height: 60px;
+        height: 60px;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        overflow: visible;
+        box-shadow: 3px 3px $divider_color;
+        padding-top: 0;
+        padding-bottom: 0;
+        span + i, i + span {
+            margin-left: 13px;
+        }
+        i {
+            font-size: 13px;
+        }
+        .yhsshu-button-icon {
+            color: #fff;
+        }
+        &:hover {
+            background-color: #000;
+            .yhsshu-button-icon, i {
+                color: inherit;
+            }
+            box-shadow: 0px 0px $divider_color;
+        }
+        &.style-2 {
+            box-shadow: 3px 3px #fff;
+            .yhsshu-button-icon, &:after {
+                background-color: #fff;
+            }
+            &:hover {
+                box-shadow: 0px 0px #fff;
+            }
+        }
+        &.no-shadow {
+            box-shadow: none;
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+    &.btn-additional-8 {
+        font-family: $heading_font_family;
+        background-color: $primary_color;
+        height: $input_height;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        overflow: visible;
+        @include border-radius(5px);
+        @media (max-width: $sm_max) {
+            font-size: 13px;
+        }
+        span + i, i + span {
+            margin-left: 13px;
+        }
+        i {
+            font-size: 13px;
+        }
+        .yhsshu-button-icon {
+            color: #fff;
+        }
+        &:hover {
+            background-color: $secondary_color;
+        }
+    }
+    &.btn-additional-9{
+        position: relative;
+        background-color: $primary_color;
+        border-radius: 25px;
+        box-shadow: 0 5px 0 #d32b42;
+        transition: all 400ms ease 0s;
+        overflow: hidden;
+        line-height: $input_height;
+        padding: 0 30px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #d32b42;
+            transition: top 400ms ease;
+            z-index: 0;
+        }
+        .yhsshu-button-icon{
+            color: #fff;
+            transform: translateX(0);
+            transition: transform 400ms ease;
+        }
+        &:hover{
+            box-shadow: 0 0 0 #d32b42;
+            background-position: bottom;
+            background-color: #d32b42;
+            background-size: 100% 200%;
+            color: #fff;
+            .yhsshu-button-icon{
+                transform: translateX(5px);
+            }
+            &::before {
+                top: 0;
+            }
+        }
+    }
+    &.btn-additional-10{
+        padding: 0 41px;
+        line-height: $input_height;
+        height: $input_height;
+        background-color: transparent;
+        color: var(--heading-color);
+        border: 1px solid rgba(var(--heading-color-rgb), 0.2);
+        font-size: 14px;
+        font-family: $heading_font_family;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            background-color: $primary_color;
+            transform-origin: bottom left;
+            transform: skewX(45deg) scale(0, 1);
+            @include transition(all 350ms linear 0s);
+            z-index: -1;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            border-left: 13px solid $primary_color;
+            border-top: 12px solid transparent;
+        }
+        &:hover {
+            color: $additional01_color;
+            &::before {
+                transform: skewX(45deg) scale(1, 1);
+                right: -55%;
+                top: -55%;
+            }
+        }
+    }
+    &.btn-additional-11{
+        position: relative;
+        overflow: hidden;
+        border: 1px solid $secondary_color;
+        letter-spacing: 0.11em;
+        font-weight: 500;
+        padding: 12px 35px;
+        &:before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            bottom: -1px;
+            right: -1px;
+            height: 0;
+            background-color: #fff;
+            @include transition(all 250ms linear 0s);
+        }
+        span{
+            @include transition(all 250ms linear 0s);
+            &::after{
+                content: attr(data-text);
+                display: inline-block;
+                position: absolute;
+                white-space: nowrap;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 100%);
+                @include transition(all 250ms ease 0s);
+            }
+        }
+        &:hover{
+            span{
+                transform: translateY(-200%);
+                &::after{
+                    transform: translate(-50%, 150%);
+                }
+            }
+            i, .yhsshu-button-icon {
+                color: $heading_color;
+            }
+            &:before {
+                height: calc(100% + 2px);
+            }
+        }
+    }
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+//* Button More
+.btn-more {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: $heading_color;
+    text-transform: uppercase;
+    > span {
+        position: relative;
+        z-index: 1;
+    }
+    &:after {
+        content: "";
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transition: all 200ms linear;
+        transition-delay: 100ms;
+        background-color: $heading_color;
+    }
+    i {
+        font-size: 15px;
+        transition: all 200ms linear;
+        max-width: 0;
+        overflow: hidden;
+    }
+    &:hover {
+        color: $secondary_color;
+        i {
+            margin-left: 5px;
+            max-width: 20px;
+        }
+    }
+    &.style-2 {
+        &:after {
+            bottom: -7px;
+            background-color: $primary_color;
+        }
+        &:hover {
+            color: $primary_color;
+        }
+    }
+    &.style-3 {
+        font-family: $heading_font_family;
+        font-size: 15px;
+        line-height: 35px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        i {
+            max-width: none;
+            font-size: 13px;
+            margin-left: 8px;
+            color: $primary_color;
+        }
+        &:after {
+            width: 0%;
+            background-color: $primary_color;
+        }
+        &:hover {
+            color: $heading_color;
+            margin-right: 8px;
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+    &.style-4 {
+        font-family: $heading_font_family;
+        font-size: 15px;
+        line-height: calc(20 / 15);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        i {
+            max-width: none;
+            margin-top: 2px;
+            font-size: 16px;
+            margin-left: 8px;
+            color: $primary_color;
+        }
+        &:after {
+            content: none;
+        }
+        &:hover {
+            i {
+                animation: toRightFromLeft 0.3s ease;
+            }
+        }
+    }
+}
+
+.item-readmore .btn {
+    i {
+        font-size: 14px;
+        line-height: 1;
+        font-weight: normal;
+        margin-left: 5px;
+        transition: all 300ms linear;
+        position: relative;
+        z-index: 1;
+        &.yhsshui-arrow-right-solid {
+            font-size: 10px;
+            margin-left: 7px;
+        }
+    }
+}
+
+.btn-icon {
+    @include d-inline-flex();
+    align-items: center;
+    justify-content: center;
+    i {
+        font-size: 21px;
+        font-weight: normal;
+        transition: all 300ms linear;
+        color: #fff;
+    }
+    &:hover {
+        i {
+            @include animation(toRightFromLeft 0.3s forwards);
+        }
+    }
+}
+
+.bt-more-plus {
+    @include d-inline-flex();
+    width: 57px;
+    height: 57px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(var(--primary-color-rgb), 0.35);
+    i {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        color: $primary_color;
+    }
+    &:hover {
+        i {
+            animation: toRightFromLeft 300ms forwards;
+        }
+    }
+}
+
+.btn-hover-outside {
+    &:hover {
+        .btn-additional-6 {
+            background-color: $primary_color;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $secondary_color;
+                @include transform(scaleX(0));
+                @include transition(all 250ms linear 0s);
+            }
+        }
+    }
+}
